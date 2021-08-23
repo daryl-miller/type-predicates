@@ -71,7 +71,7 @@ function getConfigFileWithPredicate(): ConfigShape {
 
 ### When should I/Shouldn't I use Type predicates.
 
-I recommend using type predicates whenever you pull in data from a source you cannot trust/has uncertainty. E.g. parsing user input, or loading a file. 
+I recommend using type predicates whenever you pull in data from a source you cannot trust/has uncertainty. E.g. parsing user input, or loading a file, or making an HTTP outbound call.
 
 They shouldn't be used as stand ins for validators/validation. They don't provide enough context when they return (a boolean) to know why something doesn't match the expected shape. Due to this, I recommend keeping your type predicates simple e.g. this field is a string, or doing a simple regex check on a guid. Your complex validation logic should live separately.
 
