@@ -20,7 +20,7 @@ function getConfigFile(): ConfigShape {
   const variableWithStringType = fs.readFileSync('./APath', 'utf-8') //Type is string
   const variableWithAnyType = JSON.parse(variableWithStringType) //Type is any
 
-  return variableWithAnyType //Type is still any. Typescript implicitly assumes this any type matches the ConfigShape interface.
+  return variableWithAnyType //Type is still any. Typescript implicitly assumes this any type matches the ConfigShape interface. (So no complaints from eslint/Typescript)
 }
 ```
 
@@ -29,7 +29,7 @@ This is dangerous because any code that relies on this function assumes that ret
 
 ### Solution
 
-The below solution implements a type predicate to check the JSON parsed result. If it's not we throw an error / "handle it. If it does pass the type predicate check we can now access the properties attached to the object as Typescript now infers the type as 'ConfigShape' not 'any'.
+The below solution implements a type predicate to check the JSON parsed result. If it's not we throw an error / "handle it". If it does pass the type predicate check we can now access the properties attached to the object as Typescript now infers the type as 'ConfigShape' not 'any'.
 
 ```javascript
 interface ConfigShape {
