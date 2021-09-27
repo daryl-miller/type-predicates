@@ -2,7 +2,7 @@
 
 ## Overview
 
-Typescript only performs compile time checks on types. What this means is if a function call at runtime returns an unexpected result the program may not fail straight away, or at all leading to unexpected behaviour. Type predicates are a tool to perform runtime checks on types and informs the typescript compiler whether my unknown/any type is what I expect it to be. 
+Typescript only performs compile time checks on types. What this means is if a function call at runtime returns an unexpected result the program may not fail straight away, or at all leading to unexpected behaviour. Type predicates are a tool to perform runtime checks on types and works with the typescript compiler to ensure your unknown/anys are the expected type.
 
 ### Example
 
